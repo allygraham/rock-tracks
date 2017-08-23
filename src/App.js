@@ -2,7 +2,17 @@ import React, { Component } from 'react';
 
 import Api from './ApiCall';
 import TrackGrid from './TrackGrid';
-import './App.css';
+
+const styles = {
+  app: {
+    textAlign: 'left',
+  },
+  header: {
+    backgroundColor: '#222',
+    padding: 20,
+    color: '#fff',
+  },
+}
 
 class App extends Component {
 
@@ -23,8 +33,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
+      <div className="app" style={styles.app}>
+        <div className="app-header" style={styles.header}>
           <h2>Rock Tracks</h2>
         </div>
           <TrackGrid content={this.state.content} />
