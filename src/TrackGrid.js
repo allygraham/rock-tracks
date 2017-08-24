@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 const styles = {
     track: {
@@ -41,7 +42,9 @@ class TrackGrid extends Component {
                             <p>{item.trackName}</p>
                             <p>{item.artistName}</p>
                             <p>&pound;{item.trackPrice}</p>
-                            <button type="button" className="btn btn-default btn-block">View Track <i className="glyphicon glyphicon-chevron-right"></i></button>
+                            <Link to={`/tracks/${item.trackId}`}>
+                                <button type="button" className="btn btn-default btn-block">View Track <i className="glyphicon glyphicon-chevron-right"></i></button>
+                            </Link>
                         </div>
                     </div>
                 </div>
