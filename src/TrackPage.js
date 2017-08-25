@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
+import PropTypes from 'prop-types';
 
 import RandomTracks from './RandomTracks';
 
@@ -26,7 +27,7 @@ const styles = {
 class TrackPage extends Component {
 
     static propTypes = {
-        tracks: React.PropTypes.array,
+        tracks: PropTypes.array,
     };
 
     componentWillReceiveProps(nextProps) {
@@ -39,7 +40,7 @@ class TrackPage extends Component {
                 <div className="row">
                     <div className="col-xs-12 col-md-8">
                         {this.props.tracks.filter((item) => {
-                            return item.trackId == this.props.match.params.trackId ? item : '';
+                            return item.trackId === this.props.match.params.trackId ? item : '';
                             }).map((item, index) => (
                                 <div className="track" style={styles.track} key={index}>
                                     <div className="track__image" style={styles.image}>

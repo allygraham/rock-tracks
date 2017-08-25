@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import TrackItem from './TrackItem';
 
 class TrackGrid extends Component {
 
     static propTypes = {
-        content: React.PropTypes.array,
+        content: PropTypes.array,
     };
 
     componentWillReceiveProps(nextProps) {

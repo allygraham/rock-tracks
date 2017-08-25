@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import TrackItem from './TrackItem';
 
 class RandomTracks extends Component {
 
     static propTypes = {
-        content: React.PropTypes.array,
+        content: PropTypes.array,
     };
 
     componentWillReceiveProps(nextProps) {

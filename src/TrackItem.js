@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const styles = {
     track: {
@@ -23,7 +24,7 @@ const styles = {
 class TrackItem extends Component {
 
     static propTypes = {
-        item: React.PropTypes.array,
+        item: PropTypes.object,
     };
 
     render() {
@@ -36,6 +37,8 @@ class TrackItem extends Component {
                     <p>{this.props.item.trackName}</p>
                     <p>{this.props.item.artistName}</p>
                     <p>&pound;{this.props.item.trackPrice}</p>
+                </div>
+                <div>
                     <Link to={`/tracks/${this.props.item.trackId}`} style={{ textDecoration: 'none' }}>
                         <button type="button" className="btn btn-default btn-block">View Track <i className="glyphicon glyphicon-chevron-right"></i></button>
                     </Link>
