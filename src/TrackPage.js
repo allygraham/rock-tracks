@@ -57,6 +57,16 @@ class TrackPage extends Component {
         )
     }
 
+    getBackButton() {
+        return (
+            <div className="track-page__back-button">
+                <Link to={`/`} style={{ textDecoration: 'none' }}>
+                    <button type="button" className="btn btn-primary btn-block btn-lg" style={{ marginTop: 20 }}><i className="glyphicon glyphicon-chevron-left"></i> Back to List</button>
+                </Link>
+            </div>
+        )
+    }
+
     render() {
         return (
             <div className="container">
@@ -64,11 +74,7 @@ class TrackPage extends Component {
                     <div className="col-xs-12 col-lg-7">
                         {this.getTrackView()}
                         <div className="col-xs-12 col-lg-6" style={{ padding: 0 }}>
-                            <div className="track-page__back-button">
-                                <Link to={`/`} style={{ textDecoration: 'none' }}>
-                                    <button type="button" className="btn btn-primary btn-block btn-lg" style={{ marginTop: 20 }}><i className="glyphicon glyphicon-chevron-left"></i> Back to List</button>
-                                </Link>
-                            </div>
+                            {this.getBackButton()}
                         </div>
                     </div>
                     <div className="col-xs-12 col-lg-5">
