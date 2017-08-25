@@ -58,11 +58,11 @@ class Track extends Component {
                         }
                     </div>
                     <div className="col-xs-12 col-sm-4">
-                        <RandomTracks content={this.props.content} />
+                        <RandomTracks content={this.props.tracks} />
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-xs-12">
+                    <div className="col-xs-4">
                         <Link to={`/`}>
                             <button type="button" className="btn btn-default btn-block"><i className="glyphicon glyphicon-chevron-left"></i> Back to List</button>
                         </Link>
