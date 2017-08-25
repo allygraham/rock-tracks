@@ -10,6 +10,8 @@ const styles = {
         borderRadius: 5,
         backgroundColor: '#fff',
         maxWidth: 390,
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
     details: {
         padding: '0 0 0 20px',

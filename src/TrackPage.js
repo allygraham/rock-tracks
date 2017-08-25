@@ -11,6 +11,7 @@ const styles = {
         padding: 20,
         border: '2px solid #d6d6d6',
         borderRadius: 5,
+        backgroundColor: '#fff',
     },
     details: {
         display: 'inline-block',
@@ -37,19 +38,19 @@ class TrackPage extends Component {
     getTrackView() {
         return (
             this.props.tracks.filter((item) => {
-            return item.trackId === this.props.match.params.trackId ? item : '';
+            return item.trackId.toString() === this.props.match.params.trackId ? item : '';
             }).map((item, index) => (
                 <div className="track" style={styles.track} key={index}>
                     <div className="track__image" style={styles.image}>
                         <img src={item.artworkUrl100} alt={item.artistName + " - " + item.collectionName} className="img-responsive" />
                     </div>
                     <div className="track__details" style={styles.details}>
-                        <p>{item.trackName}</p>
+                        <p><strong>{item.trackName}</strong></p>
                         <p>{item.artistName}</p>
                         <p><Moment format="m:ss">{item.trackTimeMillis}</Moment></p>
                         <p><Moment format="Do MMM YY">{item.releaseDate}</Moment></p>
                         <p>&pound;{item.trackPrice}</p>
-                        <a className="btn btn-default" href={item.trackViewUrl} target="_blank">More Details <i className="glyphicon glyphicon-new-window"></i></a>
+                        <a className="btn btn-success" href={item.trackViewUrl} target="_blank">More Details <i className="glyphicon glyphicon-new-window"></i></a>
                     </div>
                 </div>
             ))
@@ -58,20 +59,20 @@ class TrackPage extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row">
-                    <div className="col-xs-12 col-lg-8">
+                    <div className="col-xs-12 col-lg-7">
                         {this.getTrackView()}
+                        <div className="col-xs-12 col-lg-6" style={{ padding: 0 }}>
+                            <div className="track-page__back-button">
+                                <Link to={`/`} style={{ textDecoration: 'none' }}>
+                                    <button type="button" className="btn btn-primary btn-block btn-lg" style={{ marginTop: 20 }}><i className="glyphicon glyphicon-chevron-left"></i> Back to List</button>
+                                </Link>
+                            </div>
+                        </div>
                     </div>
-                    <div className="col-xs-12 col-lg-4">
+                    <div className="col-xs-12 col-lg-5">
                         <RandomTracks content={this.props.tracks} />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-xs-2 col-xs-offset-1">
-                        <Link to={`/`} style={{ textDecoration: 'none' }}>
-                            <button type="button" className="btn btn-primary btn-block btn-lg"><i className="glyphicon glyphicon-chevron-left"></i> Back to List</button>
-                        </Link>
                     </div>
                 </div>
             </div>
