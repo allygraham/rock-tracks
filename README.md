@@ -2,7 +2,7 @@
 
 The purpose of this app:
 
->Build a web application that connects to Apple's iTunes API and returns a list of rock tracks. It should have two screens; one for the list of tracks >and one for a detailed view of a selected track.
+>Build a web application that connects to Apple's iTunes API and returns a list of rock tracks. It should have two screens; one for the list of tracks and one for a detailed view of a selected track.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
