@@ -13,21 +13,16 @@ class TrackGrid extends Component {
         this.setState(nextProps);
     }
 
-    getGrid() {
-        return (
-            this.props.content.map((item, index) => (
-                <div className="col-xs-12 col-sm-6 col-md-4" key={index}>
-                    <TrackItem item={item} />
-                </div>
-            ))        
-        ) 
-    }
-
     render() {
         return (
             <div className="container-fluid">
                 <div className="row">
-                   {this.getGrid()}
+                   {this.props.content.map((item, index) => (
+                        <div className="col-xs-12 col-sm-6 col-md-4" key={index}>
+                            <TrackItem item={item} />
+                        </div>
+                        ))
+                    }
                 </div>
             </div>
         )
