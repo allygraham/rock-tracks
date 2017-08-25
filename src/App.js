@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Api from './ApiCall';
-import Track from './Track';
+import TrackPage from './TrackPage';
 import TrackGrid from './TrackGrid';
 
 const styles = {
@@ -49,7 +49,7 @@ class App extends Component {
                   <TrackGrid content={this.state.content} />
               )}/>
               <Route path='/tracks/:trackId' render={props => (
-                  <Track {...props} tracks={this.state.content} />
+                  <TrackPage {...props} tracks={this.state.content} />
               )}/>
             </Switch>
         </div>

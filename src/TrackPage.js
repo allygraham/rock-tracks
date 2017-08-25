@@ -23,7 +23,7 @@ const styles = {
     },
 }
 
-class Track extends Component {
+class TrackPage extends Component {
 
     static propTypes = {
         tracks: React.PropTypes.array,
@@ -37,7 +37,7 @@ class Track extends Component {
         return (
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-xs-12 col-sm-8">
+                    <div className="col-xs-12 col-md-8">
                         {this.props.tracks.filter((item) => {
                             return item.trackId == this.props.match.params.trackId ? item : '';
                             }).map((item, index) => (
@@ -57,13 +57,13 @@ class Track extends Component {
                             ))
                         }
                     </div>
-                    <div className="col-xs-12 col-sm-4">
+                    <div className="col-xs-12 col-md-4">
                         <RandomTracks content={this.props.tracks} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-xs-4">
-                        <Link to={`/`}>
+                        <Link to={`/`} style={{ textDecoration: 'none' }}>
                             <button type="button" className="btn btn-default btn-block"><i className="glyphicon glyphicon-chevron-left"></i> Back to List</button>
                         </Link>
                     </div>
@@ -74,4 +74,4 @@ class Track extends Component {
 
 }
 
-export default Track;
+export default TrackPage;
