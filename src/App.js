@@ -33,7 +33,6 @@ class App extends Component {
   componentDidMount() {
     Api.requestPost().then(data => {
       this.setState({content: data.response});
-      console.log(this.state.content); 
     })
   }
 
