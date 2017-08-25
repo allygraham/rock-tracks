@@ -18,7 +18,7 @@ class TrackGrid extends Component {
             <div className="container">
                 <div className="row">
                    {this.props.content.map((item, index) => (
-                        <div className="col-xs-12 col-sm-6 col-md-4" key={index}>
+                        <div className="col-xs-12 col-sm-6 col-lg-4" key={index}>
                             <TrackItem item={item} />
                         </div>
                         ))
