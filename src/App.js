@@ -12,9 +12,13 @@ import TrackGrid from './TrackGrid';
 const styles = {
   app: {
     textAlign: 'left',
+    backgroundColor: '#eee',
+    height: '100%',
+    minHeight: '100vh',
+    paddingBottom: 60,
   },
   header: {
-    backgroundColor: '#222',
+    backgroundColor: '#444',
     padding: 20,
     color: '#fff',
   },

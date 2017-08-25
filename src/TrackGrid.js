@@ -15,7 +15,7 @@ class TrackGrid extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row">
                    {this.props.content.map((item, index) => (
                         <div className="col-xs-12 col-sm-6 col-md-4" key={index}>

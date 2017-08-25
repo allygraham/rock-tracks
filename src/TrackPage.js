@@ -60,17 +60,17 @@ class TrackPage extends Component {
         return (
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-xs-12 col-md-8">
+                    <div className="col-xs-12 col-lg-8">
                         {this.getTrackView()}
                     </div>
-                    <div className="col-xs-12 col-md-4">
+                    <div className="col-xs-12 col-lg-4">
                         <RandomTracks content={this.props.tracks} />
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-xs-4">
+                    <div className="col-xs-2 col-xs-offset-1">
                         <Link to={`/`} style={{ textDecoration: 'none' }}>
-                            <button type="button" className="btn btn-default btn-block"><i className="glyphicon glyphicon-chevron-left"></i> Back to List</button>
+                            <button type="button" className="btn btn-primary btn-block btn-lg"><i className="glyphicon glyphicon-chevron-left"></i> Back to List</button>
                         </Link>
                     </div>
                 </div>

@@ -8,16 +8,29 @@ const styles = {
         padding: 20,
         border: '2px solid #d6d6d6',
         borderRadius: 5,
+        backgroundColor: '#fff',
+        maxWidth: 390,
     },
     details: {
-        display: 'inline-block',
-        padding: '0 20px',
-        textAlign: 'left',
-    },
-    image: {
+        padding: '0 0 0 20px',
         display: 'inline-block',
         verticalAlign: 'top',
-        position: 'relative',
+        textOverflow: 'ellipsis',
+        width: 200,
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+    },
+    trackName: {
+
+    },
+    image: {
+        width: 100,
+        height: 100,
+        display: 'inline-block',
+        verticalAlign: 'top',
+    },
+    button: {
+        marginTop: 15,
     },
 }
 
@@ -29,18 +42,18 @@ class TrackItem extends Component {
 
     render() {
         return (
-           <div className="track" style={styles.track}>
+           <div className="track thumbnail" style={styles.track}>
                 <div className="track__image" style={styles.image}>
                     <img src={this.props.item.artworkUrl100} alt={this.props.item.artistName + " - " + this.props.item.collectionName} className="img-responsive" />
                 </div>
-                <div className="track__details" style={styles.details}>
-                    <p>{this.props.item.trackName}</p>
+                <div className="track__details caption" style={styles.details}>
+                    <p style={styles.trackName}><strong>{this.props.item.trackName}</strong></p>
                     <p>{this.props.item.artistName}</p>
-                    <p>&pound;{this.props.item.trackPrice}</p>
+                    <p style={{ marginTop: 30 }}>&pound;{this.props.item.trackPrice}</p>
                 </div>
-                <div>
+                <div className="track__button" style={styles.button}>
                     <Link to={`/tracks/${this.props.item.trackId}`} style={{ textDecoration: 'none' }}>
-                        <button type="button" className="btn btn-default btn-block">View Track <i className="glyphicon glyphicon-chevron-right"></i></button>
+                        <button type="button" className="btn btn-primary btn-block">View Track <i className="glyphicon glyphicon-chevron-right"></i></button>
                     </Link>
                 </div>
             </div> 
