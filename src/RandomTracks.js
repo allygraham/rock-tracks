@@ -29,7 +29,7 @@ class RandomTracks extends Component {
         return (
             <div>
              {randomTracks.map((item, index) => (
-                <div className="col-xs-12" key={index}>
+                <div key={index}>
                     <TrackItem item={item} />
                 </div>
                 ))     
