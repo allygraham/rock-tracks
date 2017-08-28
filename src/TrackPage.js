@@ -35,7 +35,7 @@ class TrackPage extends Component {
         this.setState(nextProps);
     }
 
-    getTrackView() {
+    getTrackView = () => {
         return (
             this.props.tracks.filter((item) => {
             return item.trackId.toString() === this.props.match.params.trackId ? item : '';
@@ -57,7 +57,7 @@ class TrackPage extends Component {
         )
     }
 
-    getBackButton() {
+    getBackButton = () => {
         return (
             <div className="track-page__back-button">
                 <Link to={`/`} style={{ textDecoration: 'none' }}>

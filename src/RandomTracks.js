@@ -13,7 +13,7 @@ class RandomTracks extends Component {
         this.setState(nextProps);
     }
 
-    randomiseTracks(array) {
+    randomiseTracks = (array) => {
         let i = array.length - 1;
         for (; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
