@@ -1,11 +1,18 @@
 import React from 'react';
-import { shallow } from 'enzyme'; 
+import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
+import { MemoryRouter } from 'react-router-dom';
 import TrackPage from '../TrackPage';
 
 const track = [];
 
 it('renders without crashing', () => {
-  shallow(<TrackPage tracks={track} />);
+  const rendered = renderer.create(
+    <MemoryRouter>
+      <TrackPage tracks={track} />
+    </MemoryRouter>
+  );
+  expect(rendered.toJSON()).toMatchSnapshot();
 });
 
 it('has a get back button method that renders properly', () => {
