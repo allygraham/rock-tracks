@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme'; 
-import App from '../App';
+import TrackGrid from '../TrackGrid';
 
 it('renders without crashing', () => {
-  shallow(<App />);
+  const tracks = [];
+  shallow(<TrackGrid content={tracks} />);
 });

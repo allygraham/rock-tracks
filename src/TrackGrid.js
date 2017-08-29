@@ -9,10 +9,6 @@ class TrackGrid extends Component {
         content: PropTypes.array,
     };
 
-    componentWillReceiveProps(nextProps) {
-        this.setState(nextProps);
-    }
-
     render() {
         return (
             <div className="container">

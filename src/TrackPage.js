@@ -31,10 +31,6 @@ class TrackPage extends Component {
         tracks: PropTypes.array,
     };
 
-    componentWillReceiveProps(nextProps) {
-        this.setState(nextProps);
-    }
-
     getTrackView = () => {
         return (
             this.props.tracks.filter((item) => {

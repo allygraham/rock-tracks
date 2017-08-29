@@ -7,6 +7,6 @@ export default {
         return {
           response: response.data.results,
         }
-      }).catch(error => console.log('Error fetchign and parsing data', error));
+      }).catch(error => console.log('Error fetching and parsing data', error));
   }
 }

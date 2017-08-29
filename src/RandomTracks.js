@@ -9,10 +9,6 @@ class RandomTracks extends Component {
         content: PropTypes.array,
     };
 
-    componentWillReceiveProps(nextProps) {
-        this.setState(nextProps);
-    }
-
     randomiseTracks = (array) => {
         let i = array.length - 1;
         for (; i > 0; i--) {
