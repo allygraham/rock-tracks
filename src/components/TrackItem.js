@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import Image from './Image';
+import ViewTrackButton from './ViewTrackButton';
+import TrackPrice from './TrackPrice';
 
 const styles = {
     track: {
@@ -22,21 +25,15 @@ const styles = {
         whiteSpace: 'nowrap',
         overflow: 'hidden',
     },
-    trackName: {
-
-    },
     image: {
         width: 100,
         height: 100,
         display: 'inline-block',
         verticalAlign: 'top',
     },
-    button: {
-        marginTop: 15,
-    },
 }
 
-class TrackItem extends Component {
+export default class TrackItem extends Component {
 
     static propTypes = {
         item: PropTypes.object,
@@ -46,21 +43,25 @@ class TrackItem extends Component {
         return (
            <div className="track thumbnail" style={styles.track}>
                 <div className="track__image" style={styles.image}>
-                    <img src={this.props.item.artworkUrl100} alt={this.props.item.artistName + " - " + this.props.item.collectionName} className="img-responsive" />
+                    <Image
+                        artwork={this.props.item.artworkUrl100}
+                        artistName={this.props.item.artistName}
+                        collectionName={this.props.item.collectionName}
+                    />
                 </div>
                 <div className="track__details caption" style={styles.details}>
                     <p style={styles.trackName}><strong>{this.props.item.trackName}</strong></p>
                     <p>{this.props.item.artistName}</p>
-                    <p style={{ marginTop: 30 }}>&pound;{this.props.item.trackPrice}</p>
+                    <div style={{ marginTop: 30 }}>
+                        <TrackPrice
+                            trackPrice={this.props.item.trackPrice}
+                        />
+                    </div>
                 </div>
-                <div className="track__button" style={styles.button}>
-                    <Link to={`/tracks/${this.props.item.trackId}`} style={{ textDecoration: 'none' }}>
-                        <button type="button" className="btn btn-primary btn-block">View Track <i className="glyphicon glyphicon-chevron-right"></i></button>
-                    </Link>
-                </div>
+                <ViewTrackButton
+                    trackId={this.props.item.trackId}
+                />
             </div> 
         )
     }
 }
-
-export default TrackItem;

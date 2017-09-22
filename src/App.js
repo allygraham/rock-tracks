@@ -5,7 +5,7 @@ import {
     Switch,
 } from 'react-router-dom';
 
-import Api from './ApiCall';
+import Api from './utils/ApiCall';
 import TrackPage from './TrackPage';
 import TrackGrid from './TrackGrid';
 
@@ -24,7 +24,7 @@ const styles = {
   },
 }
 
-class App extends Component {
+export default class App extends Component {
 
   constructor(props) {
     super(props);
@@ -60,5 +60,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

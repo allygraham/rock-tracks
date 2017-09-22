@@ -1,7 +1,7 @@
 
 jest.mock('../__mocks__/requestPost');
 
-const apiCall = require('../ApiCall');
+const apiCall = require('../utils/ApiCall');
 
 xit('should load track data', () => {
     return apiCall.requestPost()

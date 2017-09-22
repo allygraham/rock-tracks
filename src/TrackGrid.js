@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import TrackItem from './TrackItem';
+import TrackItem from './components/TrackItem';
 
-class TrackGrid extends Component {
+export default class TrackGrid extends Component {
 
     static propTypes = {
         content: PropTypes.array,
@@ -24,5 +24,3 @@ class TrackGrid extends Component {
         )
     }
 }
-
-export default TrackGrid;
