@@ -12,7 +12,6 @@ const styles = {
         border: '2px solid #d6d6d6',
         borderRadius: 5,
         backgroundColor: '#fff',
-        maxWidth: 390,
         marginLeft: 'auto',
         marginRight: 'auto',
     },

@@ -1,5 +1,5 @@
 export default {
-    randomiseTracks: function(array) {
+    randomiseTracks: (array) => {
         let i = array.length - 1;
         for (; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -9,7 +9,7 @@ export default {
         }
         return array.slice(0, 3);
     },
-    trackName: function(tracks, trackId) {
+    trackName: (tracks, trackId) => {
         let track = '';
         tracks.map((item) => {
             if (item.trackId.toString() === trackId) {
