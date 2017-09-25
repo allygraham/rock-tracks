@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import TrackItem from './components/TrackItem';
-import TrackMethods from './utils/TrackMethods';
+import TrackItem from './TrackItem';
+import TrackMethods from '../utils/TrackMethods';
 
 export default class RandomTracks extends Component {
 

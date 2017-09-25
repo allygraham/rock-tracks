@@ -9,7 +9,9 @@ export default class TrackPrice extends Component {
 
     render() {
         return (
-            <p>&pound;{this.props.trackPrice}</p>
+            <div style={{ display: 'inline-flex' }}>
+                &pound;{this.props.trackPrice}
+            </div>
         )
     }
 }

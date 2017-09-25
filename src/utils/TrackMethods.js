@@ -8,5 +8,14 @@ export default {
             array[j] = temp;
         }
         return array.slice(0, 3);
-    }
+    },
+    trackName: function(tracks, trackId) {
+        let track = '';
+        tracks.map((item) => {
+            if (item.trackId.toString() === trackId) {
+                return track = item.trackName;
+            } 
+        });
+        return track;
+    },
 }

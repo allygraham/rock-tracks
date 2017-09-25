@@ -7,7 +7,7 @@ import TrackPrice from './TrackPrice';
 
 const styles = {
     track: {
-        marginTop: 40,
+        marginTop: 27,
         padding: 20,
         border: '2px solid #d6d6d6',
         borderRadius: 5,
@@ -31,6 +31,9 @@ const styles = {
         display: 'inline-block',
         verticalAlign: 'top',
     },
+    trackName: {
+        textOverflow: 'ellipsis',
+    },
 }
 
 export default class TrackItem extends Component {
@@ -53,9 +56,9 @@ export default class TrackItem extends Component {
                     <p style={styles.trackName}><strong>{this.props.item.trackName}</strong></p>
                     <p>{this.props.item.artistName}</p>
                     <div style={{ marginTop: 30 }}>
-                        <TrackPrice
-                            trackPrice={this.props.item.trackPrice}
-                        />
+                    <TrackPrice
+                        trackPrice={this.props.item.trackPrice}
+                    />
                     </div>
                 </div>
                 <ViewTrackButton

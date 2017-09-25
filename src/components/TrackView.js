@@ -3,10 +3,11 @@ import Moment from 'react-moment';
 import PropTypes from 'prop-types';
 
 import Image from './Image';
+import TrackPrice from './TrackPrice';
 
 const styles = {
     track: {
-        marginTop: 40,
+        marginTop: 20,
         padding: 20,
         border: '2px solid #d6d6d6',
         borderRadius: 5,
@@ -44,12 +45,15 @@ export default class TrackView extends Component {
                         />
                     </div>
                     <div className="track__details" style={styles.details}>
-                        <p><strong>{item.trackName}</strong></p>
-                        <p>{item.artistName}</p>
-                        <p><Moment format="m:ss">{item.trackTimeMillis}</Moment></p>
-                        <p><Moment format="Do MMM YY">{item.releaseDate}</Moment></p>
-                        <p>&pound;{item.trackPrice}</p>
-                        <a className="btn btn-success" href={item.trackViewUrl} target="_blank">More Details <i className="glyphicon glyphicon-new-window"></i></a>
+                        <p><strong>Song: </strong>{item.trackName}</p>
+                        <p><strong>Artist: </strong>{item.artistName}</p>
+                        <p><strong>Track Length: </strong><Moment format="m:ss">{item.trackTimeMillis}</Moment></p>
+                        <p><strong>Release Date: </strong><Moment format="Do MMM YY">{item.releaseDate}</Moment></p>
+                        <p style={{ display: 'inline-block' }}><strong>Price:</strong>&nbsp;</p>
+                        <TrackPrice 
+                          trackPrice={item.trackPrice}
+                        />
+                        <p><a className="btn btn-success" href={item.trackViewUrl} target="_blank">More Details <i className="glyphicon glyphicon-new-window"></i></a></p>
                     </div>
                 </div>
             ))
