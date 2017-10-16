@@ -13,12 +13,12 @@ export default class TrackPage extends Component {
     };
 
     render() {
-        const trackName = TrackMethods.trackName(this.props.tracks, this.props.match.params.trackId);
+        const selectedTrackName = TrackMethods.selectedTrackName(this.props.tracks, this.props.match.params.trackId);
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-xs-12 col-md-6 col-lg-8">
-                        <h2 style={{ marginTop: 40 }}>{trackName}</h2>
+                        <h2 style={{ marginTop: 40 }}>{selectedTrackName}</h2>
                         <TrackView
                           tracks={this.props.tracks}
                           selectedTrack={this.props.match.params.trackId}

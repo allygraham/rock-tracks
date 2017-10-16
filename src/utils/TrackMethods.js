@@ -9,13 +9,14 @@ export default {
         }
         return array.slice(0, 3);
     },
-    trackName: (tracks, trackId) => {
-        let track = '';
-        tracks.map((item) => {
-            if (item.trackId.toString() === trackId) {
-                return track = item.trackName;
-            } 
-        });
-        return track;
+    selectedTrackName: (tracks, trackIdentifier) => {
+        const individualTrack = tracks
+            .find((item) => item.trackId.toString() === trackIdentifier);
+
+        if (!individualTrack) {
+            return "";
+        }
+
+        return individualTrack.trackName;
     },
 }

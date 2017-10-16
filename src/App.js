@@ -31,13 +31,19 @@ export default class App extends Component {
 
     this.state = {
       content: [],
+      showError: false,
     };
   }
 
   componentDidMount() {
-    Api.requestPost().then(data => {
-      this.setState({content: data.response});
-    })
+    let self = this;
+    Api.requestPost().then(function(data) {
+      if (data.response) {
+        self.setState({content: data.response});
+      } else {
+        self.setState({showError: true});
+      }
+    });
   }
 
   render() {
@@ -49,7 +55,7 @@ export default class App extends Component {
           </div>
             <Switch>
               <Route exact path='/' render={() => (
-                  <TrackGrid content={this.state.content} />
+                  <TrackGrid content={this.state.content} apiError={this.state.showError} />
               )}/>
               <Route path='/tracks/:trackId' render={props => (
                   <TrackPage {...props} tracks={this.state.content} />
